@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://www.medusajs.com">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
+    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
+    </picture>
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  Medusa Next.js Starter Template
+</h1>
 
-## Available Scripts
+<p align="center">
+Combine Medusa's modules for your commerce backend with the newest Next.js 15 features for a performant storefront.</p>
 
-In the project directory, you can run:
+<p align="center">
+  <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
+  </a>
+  <a href="https://discord.gg/xpCwq3Kfn8">
+    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
+  </a>
+  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
+    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
+  </a>
+</p>
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To use the [Next.js Starter Template](https://medusajs.com/nextjs-commerce/), you should have a Medusa server running locally on port 9000.
+For a quick setup, run:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```shell
+npx create-medusa-app@latest
+```
 
-### `npm test`
+Check out [create-medusa-app docs](https://docs.medusajs.com/learn/installation) for more details and troubleshooting.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Overview
 
-### `npm run build`
+The Medusa Next.js Starter is built with:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Medusa](https://medusajs.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Features include:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Full ecommerce support:
+  - Product Detail Page
+  - Product Overview Page
+  - Product Collections
+  - Cart
+  - Checkout with Stripe
+  - User Accounts
+  - Order Details
+- Full Next.js 15 support:
+  - App Router
+  - Next fetching/caching
+  - Server Components
+  - Server Actions
+  - Streaming
+  - Static Pre-Rendering
 
-### `npm run eject`
+# Quickstart
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Setting up the environment variables
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Navigate into your projects directory and get your environment variables ready:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```shell
+cd nextjs-starter-medusa/
+mv .env.template .env.local
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Install dependencies
 
-## Learn More
+Use Yarn to install all dependencies.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell
+yarn
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Start developing
 
-### Code Splitting
+You are now ready to start up your project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```shell
+yarn dev
+```
 
-### Analyzing the Bundle Size
+### Open the code and start customizing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Your site is now running at http://localhost:8000!
 
-### Making a Progressive Web App
+# Payment integrations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+By default this starter supports the following payment integrations
 
-### Advanced Configuration
+- [Stripe](https://stripe.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To enable the integrations you need to add the following to your `.env.local` file:
 
-### Deployment
+```shell
+NEXT_PUBLIC_STRIPE_KEY=<your-stripe-public-key>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+You'll also need to setup the integrations in your Medusa server. See the [Medusa documentation](https://docs.medusajs.com) for more information on how to configure [Stripe](https://docs.medusajs.com/resources/commerce-modules/payment/payment-provider/stripe#main).
 
-### `npm run build` fails to minify
+# Resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Learn more about Medusa
+
+- [Website](https://www.medusajs.com/)
+- [GitHub](https://github.com/medusajs)
+- [Documentation](https://docs.medusajs.com/)
+
+## Learn more about Next.js
+
+- [Website](https://nextjs.org/)
+- [GitHub](https://github.com/vercel/next.js)
+- [Documentation](https://nextjs.org/docs)
