@@ -14,11 +14,3 @@ module.exports = defineConfig({
     }
   }
 })
-
-const plugins = [
-  // existing plugins here
-  {
-    resolve: "./src/admin",
-    options: {}
-  },
-]
